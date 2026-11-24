@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button onclick="showHello()">Click Me</button>
+
+    <p id="message"></p>
+
+    <script>
+        async function showHello() {
+            const response = await fetch("/hello");
+            const data = await response.json();
+
+            document.getElementById("message").textContent = data.message;
+        }
+    </script>
+
+</body>
+</html>
